@@ -6,14 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import {APP_BASE_HREF, HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 
 const routes: Routes = [
-	{ path: '',             redirectTo: 'home',             pathMatch: 'full' },
-	{ path: 'home',         component: HomeComponent },
-	{ path: 'about',        component: AboutComponent },
-	{ path: 'contact',      component: ContactComponent },
-	{ path: 'contactus',    redirectTo: 'contact' }
+  { path: '',             redirectTo: 'home',             pathMatch: 'full' },
+  { path: 'home',         component: HomeComponent },
+  { path: 'about',        component: AboutComponent },
+  { path: 'contact',      component: ContactComponent },
+  { path: 'contactus',    redirectTo: 'contact' }
 ];
 
 
@@ -28,7 +29,10 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: APP_BASE_HREF, useValue: '/' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
