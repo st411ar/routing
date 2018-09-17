@@ -4,7 +4,7 @@
   {{ message }}
 </div>
 
-<form *ngIf="!auth.getUser()">
+<form *ngIf="!getUser()">
   <div class="form-group">
     <label for="username">User: (type <em>user</em>)</label>
     <input class="form-control" name="username" #username>
@@ -20,10 +20,20 @@
       class="btn btn-default"
       (click)="login(username.value, password.value)"
   >
-    Submit
+    Sign In
   </button>
 </form>
 
-<div class="well" *ngIf="auth.getUser()">
-	Logged in as <b>{{ auth.getUser() }}</b>
+<div class="well" *ngIf="getUser()">
+  <p>
+    Logged in as <b>{{ getUser() }}</b>
+  </p>
+
+  <button
+      type="submit"
+      class="btn btn-default"
+      (click)="logout()"
+  >
+    Log Out
+  </button>
 </div>

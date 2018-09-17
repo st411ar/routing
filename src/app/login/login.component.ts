@@ -17,6 +17,10 @@ export class LoginComponent implements OnInit {
 	ngOnInit() {}
 
 
+	getUser(): string {
+		return this.auth.getUser();
+	}
+
 	login(username: string, password: string): boolean {
 		this.clearWarningMessage();
 		if (this.auth.login(username, password)) {
@@ -26,6 +30,10 @@ export class LoginComponent implements OnInit {
 			setTimeout(() => this.clearWarningMessage(), 2500);
 			return false;
 		}
+	}
+
+	logout(): boolean {
+		return this.auth.logout();
 	}
 
 

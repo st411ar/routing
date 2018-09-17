@@ -18,4 +18,14 @@ export class AuthService {
 			return false;
 		}
 	}
+
+	logout(): boolean {
+		try {
+			localStorage.removeItem('username');
+			return true;
+		} catch (error) {
+			console.log(error);
+			return false;
+		}
+	}
 }
