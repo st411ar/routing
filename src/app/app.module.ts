@@ -14,6 +14,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ProtectedComponent } from './protected/protected.component';
+import { SignedInGuard } from './guards/signed-in.guard';
 
 
 const routes: Routes = [
@@ -23,7 +24,11 @@ const routes: Routes = [
   { path: 'contact',      component: ContactComponent },
   { path: 'contactus',    redirectTo: 'contact' },
   { path: 'sign-in',      component: SignInComponent },
-  { path: 'protected',    component: ProtectedComponent }
+  {
+    path: 'protected',
+    component: ProtectedComponent,
+    canActivate: [SignedInGuard]
+  }
 ];
 
 
@@ -43,7 +48,8 @@ const routes: Routes = [
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
     { provide: APP_BASE_HREF, useValue: '/' },
-    AUTH_PROVIDERS
+    AUTH_PROVIDERS,
+    SignedInGuard
   ],
   bootstrap: [AppComponent]
 })
