@@ -15,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { ProtectedComponent } from './protected/protected.component';
 import { SignedInGuard } from './guards/signed-in.guard';
+import { ProductsComponent } from './products/products.component';
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
     AboutComponent,
     ContactComponent,
     SignInComponent,
-    ProtectedComponent
+    ProtectedComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
