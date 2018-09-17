@@ -27,6 +27,9 @@
         <li [class.active]="isActive('/contact')">
           <a [routerLink]="['/contact']">Contact Us</a>
         </li>
+        <li *ngIf="isSignedIn()" [class.active]="isActive('/protected')">
+          <a [routerLink]="['/protected']">Protected Area</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li [class.active]="isActive('/sign-in')">
