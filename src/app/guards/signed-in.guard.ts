@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
+import { AuthService } from '../services/auth.service';
+
+
 @Injectable()
 export class SignedInGuard implements CanActivate {
 	
-	constructor() {}
+	constructor(private auth: AuthService) {}
 
 
-	canActivate(): Observable<boolean> {
-		return of(true);
+	canActivate(): boolean {
+		return this.auth.isSignedIn();
 	}
 }
