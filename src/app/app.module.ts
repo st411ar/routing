@@ -21,15 +21,16 @@ import { ProductsComponent } from './products/products.component';
 const routes: Routes = [
   { path: '',             redirectTo: 'home',             pathMatch: 'full' },
   { path: 'home',         component: HomeComponent },
+  { path: 'products',     component: ProductsComponent },
   { path: 'about',        component: AboutComponent },
   { path: 'contact',      component: ContactComponent },
   { path: 'contactus',    redirectTo: 'contact' },
-  { path: 'sign-in',      component: SignInComponent },
   {
     path: 'protected',
     component: ProtectedComponent,
     canActivate: [SignedInGuard]
-  }
+  },
+  { path: 'sign-in',      component: SignInComponent }
 ];
 
 
