@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -6,5 +7,12 @@ import { Router } from '@angular/router';
 	templateUrl: './app.component.html'
 })
 export class AppComponent {
-	constructor(private router: Router) {}
+	constructor(
+		private location: Location,
+		private router: Router
+	) {}
+
+	isActive(path: string): boolean {
+		return path === this.location.path();
+	}
 }

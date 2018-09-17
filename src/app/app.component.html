@@ -18,17 +18,20 @@
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-
-<!--         <li class="active">
-          <a href="#">Link <span class="sr-only">(current)</span></a>
+        <li [class.active]="isActive('/home')">
+          <a [routerLink]="['/home']">Home</a>
         </li>
- -->
-        <li><a [routerLink]="['/home']">Home</a></li>
-        <li><a [routerLink]="['/about']">About Us</a></li>
-        <li><a [routerLink]="['/contact']">Contact Us</a></li>
+        <li [class.active]="isActive('/about')">
+          <a [routerLink]="['/about']">About Us</a>
+        </li>
+        <li [class.active]="isActive('/contact')">
+          <a [routerLink]="['/contact']">Contact Us</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a [routerLink]="['/login']">Sign In</a></li>
+        <li [class.active]="isActive('/sign-in')">
+          <a [routerLink]="['/sign-in']">Sign In</a>
+        </li>
       </ul>
     </div>
   </div>

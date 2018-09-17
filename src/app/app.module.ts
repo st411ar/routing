@@ -12,7 +12,7 @@ import { AUTH_PROVIDERS } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
-import { LoginComponent } from './login/login.component';
+import { SignInComponent } from './sign-in/sign-in.component';
 
 
 const routes: Routes = [
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'about',        component: AboutComponent },
   { path: 'contact',      component: ContactComponent },
   { path: 'contactus',    redirectTo: 'contact' },
-  { path: 'login',        component: LoginComponent }
+  { path: 'sign-in',      component: SignInComponent }
 ];
 
 
@@ -31,7 +31,7 @@ const routes: Routes = [
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    LoginComponent
+    SignInComponent
   ],
   imports: [
     BrowserModule,

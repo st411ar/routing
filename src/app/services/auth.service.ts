@@ -10,7 +10,7 @@ export class AuthService {
 		return localStorage.getItem('username');
 	}
 
-	login(user: string, password: string): boolean {
+	signIn(user: string, password: string): boolean {
 		if (user === 'user' && password === 'password') {
 			localStorage.setItem('username', user);
 			return true;
@@ -19,7 +19,7 @@ export class AuthService {
 		}
 	}
 
-	logout(): boolean {
+	signOut(): boolean {
 		try {
 			localStorage.removeItem('username');
 			return true;

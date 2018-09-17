@@ -4,10 +4,10 @@ import { AuthService } from '../services/auth.service';
 
 
 @Component({
-	selector: 'app-login',
-	templateUrl: './login.component.html'
+	selector: 'app-sign-in',
+	templateUrl: './sign-in.component.html'
 })
-export class LoginComponent implements OnInit {
+export class SignInComponent implements OnInit {
 	message: string;
 
 	constructor(public auth: AuthService) {
@@ -21,9 +21,9 @@ export class LoginComponent implements OnInit {
 		return this.auth.getUser();
 	}
 
-	login(username: string, password: string): boolean {
+	signIn(username: string, password: string): boolean {
 		this.clearWarningMessage();
-		if (this.auth.login(username, password)) {
+		if (this.auth.signIn(username, password)) {
 			return true;
 		} else {
 			this.message = `Incorrect credentials.`;
@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit {
 		}
 	}
 
-	logout(): boolean {
-		return this.auth.logout();
+	signOut(): boolean {
+		return this.auth.signOut();
 	}
 
 
