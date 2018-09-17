@@ -10,6 +10,10 @@ export class AuthService {
 		return localStorage.getItem('username');
 	}
 
+	isSignedIn(): boolean {
+		return this.getUser() !== null;
+	}
+
 	signIn(user: string, password: string): boolean {
 		if (user === 'user' && password === 'password') {
 			localStorage.setItem('username', user);
