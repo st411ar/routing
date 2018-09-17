@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { ProtectedComponent } from './protected/protected.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'about',        component: AboutComponent },
   { path: 'contact',      component: ContactComponent },
   { path: 'contactus',    redirectTo: 'contact' },
-  { path: 'sign-in',      component: SignInComponent }
+  { path: 'sign-in',      component: SignInComponent },
+  { path: 'protected',    component: ProtectedComponent }
 ];
 
 
@@ -31,7 +33,8 @@ const routes: Routes = [
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    SignInComponent
+    SignInComponent,
+    ProtectedComponent
   ],
   imports: [
     BrowserModule,
