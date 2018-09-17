@@ -8,6 +8,7 @@ import {
 } from '@angular/common';
 
 import { AppComponent } from './app.component';
+import { AuthService } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -38,7 +39,8 @@ const routes: Routes = [
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
-    { provide: APP_BASE_HREF, useValue: '/' }
+    { provide: APP_BASE_HREF, useValue: '/' },
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
