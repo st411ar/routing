@@ -1,0 +1,39 @@
+<h1>Sign In</h1>
+
+<div class="alert alert-danger" role="alert" *ngIf="message">
+  {{ message }}
+</div>
+
+<form *ngIf="!getUser()">
+  <div class="form-group">
+    <label for="username">User: (type <em>user</em>)</label>
+    <input class="form-control" name="username" #username>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password: (type <em>password</em>)</label>
+    <input class="form-control" type="password" name="password" #password>
+  </div>
+
+  <button
+      type="submit"
+      class="btn btn-default"
+      (click)="signIn(username.value, password.value)"
+  >
+    Sign In
+  </button>
+</form>
+
+<div class="well" *ngIf="getUser()">
+  <p>
+    Logged in as <b>{{ getUser() }}</b>
+  </p>
+
+  <button
+      type="submit"
+      class="btn btn-default"
+      (click)="signOut()"
+  >
+    Sign Out
+  </button>
+</div>
