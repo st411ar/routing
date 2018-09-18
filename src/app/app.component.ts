@@ -16,7 +16,7 @@ export class AppComponent {
 	) {}
 
 	isActive(path: string): boolean {
-		return path === this.location.path();
+		return this.location.path().startsWith(path);
 	}
 
 	isSignedIn(): boolean {
