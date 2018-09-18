@@ -16,6 +16,6 @@ export class ProductsComponent implements OnInit {
 
 
 	goToProduct(id: string): void {
-		this.router.navigate(['./product'], { relativeTo: this.route });
+		this.router.navigate(['./product', id], { relativeTo: this.route });
 	}
 }

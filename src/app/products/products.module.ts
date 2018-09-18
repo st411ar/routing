@@ -10,7 +10,7 @@ export const routes: Routes = [
 	{ path: '', redirectTo: 'main', pathMatch: 'full' },
 	{ path: 'main', component: MainComponent },
 	{ path: 'more-info', component: MoreInfoComponent },
-	{ path: 'product', component: ProductComponent }
+	{ path: 'product/:id', component: ProductComponent }
 ];
 
 @NgModule({
