@@ -7,6 +7,11 @@ import {
   LocationStrategy
 } from '@angular/common';
 
+import {
+  ProductsModule,
+  routes as productsRoutes
+} from './products/products.module';
+
 import { AppComponent } from './app.component';
 import { AUTH_PROVIDERS } from './services/auth.service';
 import { HomeComponent } from './home/home.component';
@@ -21,7 +26,11 @@ import { ProductsComponent } from './products/products.component';
 const routes: Routes = [
   { path: '',             redirectTo: 'home',             pathMatch: 'full' },
   { path: 'home',         component: HomeComponent },
-  { path: 'products',     component: ProductsComponent },
+  {
+    path: 'products',
+    component: ProductsComponent,
+    children: productsRoutes
+  },
   { path: 'about',        component: AboutComponent },
   { path: 'contact',      component: ContactComponent },
   { path: 'contactus',    redirectTo: 'contact' },
@@ -46,7 +55,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ProductsModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
